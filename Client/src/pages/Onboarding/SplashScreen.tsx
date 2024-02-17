@@ -9,7 +9,7 @@ const SplashScreen: FC = () => {
         flexDirection: 'column',
         justifyContent: 'flex-end',
         alignItems: 'center',
-        bgcolor: '#F4F8FF',
+        bgcolor: 'neutral.aliceBlue',
         minHeight: '100vh',
         px: 2,
         pt: 5,
@@ -28,13 +28,7 @@ const SplashScreen: FC = () => {
           zIndex: 1
         }}
       />
-      <img
-        style={{
-          width: '100%'
-        }}
-        src="./Image-onboarding.png"
-        alt=""
-      />
+      <img width="100%" src="./Image-onboarding.png" alt="" />
     </Box>
   );
 };
