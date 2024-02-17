@@ -1,8 +1,8 @@
 import { Box, Link, Divider, Typography } from '@mui/material';
 import { type FC } from 'react';
-import LoginHeader from './Partials/LoginHeader';
-import LoginForm from './Partials/LoginForm';
-import LoginOptions from './Partials/LoginOptions';
+import LoginHeader from './partials/LoginHeader';
+import LoginForm from './partials/LoginForm';
+import LoginOptions from './partials/LoginOptions';
 import { Link as routerLink } from 'react-router-dom';
 
 const LoginPage: FC = () => {
