@@ -2,6 +2,7 @@ import { CssBaseline, Container } from '@mui/material';
 import { createBrowserRouter, Outlet } from 'react-router-dom';
 import LoginPage from './pages/LoginPage/LoginPage';
 import OnboardingPage from './pages/Onboarding/OnboardingPage';
+import RegisterPage from './pages/RegisterPage/RegisterPage';
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: '/login',
         element: <LoginPage />
+      },
+      {
+        path: '/register',
+        element: <RegisterPage />
       }
     ]
   }

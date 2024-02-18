@@ -79,7 +79,7 @@ const OnboardingSteps: FC = () => {
         </Box>
         <Box sx={{ width: '100%', px: 2 }}>
           <Button variant="contained" fullWidth sx={{ py: 2.5 }} onClick={handleNext}>
-            {activeStep === 2 ? 'Login' : 'Next'}
+            {activeStep === 2 ? 'Log In' : 'Next'}
           </Button>
         </Box>
       </Box>
