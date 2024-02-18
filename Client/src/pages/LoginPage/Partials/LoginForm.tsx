@@ -27,11 +27,11 @@ interface LoginSchema {
 }
 
 const loginSchema = yup.object({
-  email: yup.string().email('Invalid email address').required('Email is required'),
+  email: yup.string().email('Invalid email address!').required('Email is required!'),
   password: yup
     .string()
-    .min(3, 'Password must be at least 8 characters')
-    .required('Password is required')
+    .min(3, 'Password must be at least 8 characters!')
+    .required('Password is required!')
 });
 
 const LoginForm: FC = () => {
@@ -148,7 +148,7 @@ const LoginForm: FC = () => {
         </Link>
       </Box>
       <Button type="submit" variant="contained" fullWidth sx={{ py: 2.5, mt: 1.5 }}>
-        Login
+        Log In
       </Button>
     </Box>
   );

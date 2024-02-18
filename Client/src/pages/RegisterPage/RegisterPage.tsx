@@ -1,20 +1,20 @@
 import { Box, Link, Divider, Typography } from '@mui/material';
 import { type FC } from 'react';
-import LoginHeader from './partials/LoginHeader';
-import LoginForm from './partials/LoginForm';
-import LoginOptions from './partials/LoginOptions';
+import RegisterHeader from './partials/RegisterHeader';
+import RegisterForm from './partials/RegisterForm';
+import RegisterOptions from './partials/RegisterOptions';
 import { Link as routerLink } from 'react-router-dom';
 
-const LoginPage: FC = () => {
+const RegisterPage: FC = () => {
   return (
     <Box>
-      <LoginHeader />
+      <RegisterHeader />
       <Box sx={{ display: 'flex', flexDirection: 'column', gap: 4, px: 2, py: 4 }}>
-        <LoginForm />
+        <RegisterForm />
         <Divider sx={{ fontSize: '0.75rem', fontWeight: 500, color: 'neutral.greyBlue' }}>
-          Or log in with
+          Or sign up with
         </Divider>
-        <LoginOptions />
+        <RegisterOptions />
         <Typography
           sx={{
             fontSize: '0.75rem',
@@ -22,9 +22,9 @@ const LoginPage: FC = () => {
             color: 'neutral.greyBlue',
             textAlign: 'center'
           }}>
-          Don&apos;t have an accout?
-          <Link component={routerLink} to="/register" sx={{ fontWeight: 500, pl: 0.5 }}>
-            Register
+          Already have an accout?
+          <Link component={routerLink} to="/login" sx={{ fontWeight: 500, pl: 0.5 }}>
+            Log In
           </Link>
         </Typography>
       </Box>
@@ -32,4 +32,4 @@ const LoginPage: FC = () => {
   );
 };
 
-export default LoginPage;
+export default RegisterPage;
