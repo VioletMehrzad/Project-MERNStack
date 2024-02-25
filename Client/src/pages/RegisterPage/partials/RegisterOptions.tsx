@@ -1,9 +1,10 @@
 import { Box, Button } from '@mui/material';
-import { type SnackbarKey, enqueueSnackbar } from 'notistack';
+import { enqueueSnackbar } from 'notistack';
 import { type FC } from 'react';
 
-const notify = (): SnackbarKey =>
-  enqueueSnackbar('Sorry! This feature is not available now!', { variant: 'warning' });
+const notify = (): void => {
+  enqueueSnackbar('Sorry! This feature is currently unavailable!', { variant: 'warning' });
+};
 
 const LoginOptions: FC = () => {
   return (
