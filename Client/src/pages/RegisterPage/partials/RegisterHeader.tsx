@@ -6,10 +6,6 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 const RegisterHeader: FC = () => {
   const navigate = useNavigate();
 
-  const handleBack = (): void => {
-    navigate('/');
-  };
-
   return (
     <Box
       sx={{
@@ -27,7 +23,11 @@ const RegisterHeader: FC = () => {
           pb: 4
         }}>
         <Box>
-          <Button variant="outlinedIcon" onClick={handleBack}>
+          <Button
+            variant="outlinedIcon"
+            onClick={() => {
+              navigate(-1);
+            }}>
             <ArrowBackIcon />
           </Button>
         </Box>

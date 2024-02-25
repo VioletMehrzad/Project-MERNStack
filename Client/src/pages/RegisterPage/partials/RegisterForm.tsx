@@ -7,23 +7,23 @@ import {
   Checkbox,
   Button,
   Link,
-  SvgIcon,
-  IconButton
+  SvgIcon
 } from '@mui/material';
-import { useState, type FC, type ReactElement } from 'react';
+import { useState, type FC, useContext } from 'react';
 import AccountBoxRoundedIcon from '@mui/icons-material/AccountBoxRounded';
 import EmailRoundedIcon from '@mui/icons-material/EmailRounded';
 import LockRoundedIcon from '@mui/icons-material/LockRounded';
-import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
-import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined';
-import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import { Link as routerLink, useNavigate } from 'react-router-dom';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
-import { closeSnackbar, enqueueSnackbar } from 'notistack';
-import { instance } from './../../../App';
+import { enqueueSnackbar } from 'notistack';
 import axios from 'axios';
+import instance from '../../../helpers/axiosInstance';
+import SnackbarCloseAction from '../../../components/SnackbarCloseAction';
+import ShowPassword from '../../../components/ShowPassword';
+import context from '../../../helpers/states/context';
+import handleUnavailableFeature from '../../../helpers/handlers/handleUnavailableFeature';
 
 interface RegisterSchema {
   fullName: string;
@@ -42,7 +42,6 @@ const registerSchema = yup.object({
 });
 
 const RegisterForm: FC = () => {
-  const [showPassword, setShowPassword] = useState(false);
   const [checked, setChecked] = useState(false);
   const navigate = useNavigate();
   const {
@@ -50,6 +49,7 @@ const RegisterForm: FC = () => {
     handleSubmit,
     formState: { errors }
   } = useForm({ resolver: yupResolver(registerSchema) });
+  const { showPassword } = useContext(context);
 
   const handleRegister = async (data: RegisterSchema): Promise<void> => {
     try {
@@ -65,12 +65,12 @@ const RegisterForm: FC = () => {
     } catch (error) {
       if (axios.isAxiosError(error) && error.response?.status === 409) {
         enqueueSnackbar(
-          'An account with this email address already exists! Please log in or use a different email to register',
+          'An account with this email address already exists! Please log in or use a different email to register.',
           {
             variant: 'error',
             autoHideDuration: 6000,
             hideIconVariant: true,
-            action: snackbarAction,
+            action: SnackbarCloseAction,
             anchorOrigin: {
               vertical: 'top',
               horizontal: 'center'
@@ -82,7 +82,7 @@ const RegisterForm: FC = () => {
           variant: 'error',
           autoHideDuration: 6000,
           hideIconVariant: true,
-          action: snackbarAction,
+          action: SnackbarCloseAction,
           anchorOrigin: {
             vertical: 'top',
             horizontal: 'center'
@@ -90,23 +90,6 @@ const RegisterForm: FC = () => {
         });
       }
     }
-  };
-
-  const snackbarAction = (): ReactElement => (
-    <IconButton
-      onClick={() => {
-        closeSnackbar();
-      }}>
-      <CloseRoundedIcon />
-    </IconButton>
-  );
-
-  const handleShowPassword = (): void => {
-    setShowPassword((show) => !show);
-  };
-
-  const notify = (): void => {
-    enqueueSnackbar('Sorry! This feature is currently unavailable!', { variant: 'warning' });
   };
 
   return (
@@ -158,9 +141,7 @@ const RegisterForm: FC = () => {
         InputProps={{
           endAdornment: (
             <InputAdornment position="end">
-              <IconButton onClick={handleShowPassword}>
-                {showPassword ? <VisibilityOffOutlinedIcon /> : <VisibilityOutlinedIcon />}
-              </IconButton>
+              <ShowPassword />
             </InputAdornment>
           )
         }}
@@ -210,7 +191,7 @@ const RegisterForm: FC = () => {
         label={
           <>
             I accept the{' '}
-            <Link component={routerLink} onClick={notify} to="#">
+            <Link component={routerLink} onClick={handleUnavailableFeature} to="#">
               Terms and Conditions
             </Link>
             .
