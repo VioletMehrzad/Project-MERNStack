@@ -7,23 +7,23 @@ import {
   Checkbox,
   Button,
   Link,
-  SvgIcon,
-  IconButton
+  SvgIcon
 } from '@mui/material';
-import { useState, type FC, type ReactElement } from 'react';
+import { useState, type FC, useContext } from 'react';
 import EmailRoundedIcon from '@mui/icons-material/EmailRounded';
 import LockRoundedIcon from '@mui/icons-material/LockRounded';
-import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
-import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined';
-import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import { Link as routerLink, useNavigate, useSearchParams } from 'react-router-dom';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
-import { enqueueSnackbar, closeSnackbar } from 'notistack';
-import { instance } from './../../../App';
+import { enqueueSnackbar } from 'notistack';
 import Cookies from 'js-cookie';
 import axios, { type AxiosResponse } from 'axios';
+import instance from '../../../helpers/axiosInstance';
+import ShowPassword from '../../../components/ShowPassword';
+import context from '../../../helpers/states/context';
+import SnackbarCloseAction from '../../../components/SnackbarCloseAction';
+import handleUnavailableFeature from '../../../helpers/handlers/handleUnavailableFeature';
 
 interface LoginSchema {
   email: string;
@@ -36,7 +36,6 @@ const loginSchema = yup.object({
 });
 
 const LoginForm: FC = () => {
-  const [showPassword, setShowPassword] = useState(false);
   const [checked, setChecked] = useState(false);
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
@@ -45,6 +44,7 @@ const LoginForm: FC = () => {
     handleSubmit,
     formState: { errors }
   } = useForm({ resolver: yupResolver(loginSchema) });
+  const { showPassword } = useContext(context);
 
   const handleLogin = async (data: LoginSchema): Promise<void> => {
     try {
@@ -69,7 +69,7 @@ const LoginForm: FC = () => {
           variant: 'error',
           autoHideDuration: 6000,
           hideIconVariant: true,
-          action: snackbarAction,
+          action: SnackbarCloseAction,
           anchorOrigin: {
             vertical: 'top',
             horizontal: 'center'
@@ -80,7 +80,7 @@ const LoginForm: FC = () => {
           variant: 'error',
           autoHideDuration: 6000,
           hideIconVariant: true,
-          action: snackbarAction,
+          action: SnackbarCloseAction,
           anchorOrigin: {
             vertical: 'top',
             horizontal: 'center'
@@ -88,23 +88,6 @@ const LoginForm: FC = () => {
         });
       }
     }
-  };
-
-  const snackbarAction = (): ReactElement => (
-    <IconButton
-      onClick={() => {
-        closeSnackbar();
-      }}>
-      <CloseRoundedIcon />
-    </IconButton>
-  );
-
-  const handleShowPassword = (): void => {
-    setShowPassword((show) => !show);
-  };
-
-  const notify = (): void => {
-    enqueueSnackbar('Sorry! This feature is currently unavailable!', { variant: 'warning' });
   };
 
   return (
@@ -146,9 +129,7 @@ const LoginForm: FC = () => {
         InputProps={{
           endAdornment: (
             <InputAdornment position="end">
-              <IconButton onClick={handleShowPassword}>
-                {showPassword ? <VisibilityOffOutlinedIcon /> : <VisibilityOutlinedIcon />}
-              </IconButton>
+              <ShowPassword />
             </InputAdornment>
           )
         }}
@@ -200,7 +181,7 @@ const LoginForm: FC = () => {
         />
         <Link
           component={routerLink}
-          onClick={notify}
+          onClick={handleUnavailableFeature}
           to="#"
           sx={{ fontSize: '0.75rem', fontWeight: 'medium' }}>
           Forgot password?
