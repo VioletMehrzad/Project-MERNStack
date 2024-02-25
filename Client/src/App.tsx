@@ -4,7 +4,16 @@ import { ThemeProvider } from '@mui/material';
 import { SnackbarProvider } from 'notistack';
 import router from './router';
 import theme from './theme';
-import StyledSnackbar from './components.tsx/StyledSnackbar';
+import StyledSnackbar from './components/StyledSnackbar';
+import axios from 'axios';
+import Cookies from 'js-cookie';
+
+export const instance = axios.create({
+  baseURL: 'http://localhost:5000',
+  headers: {
+    Authorization: Cookies.get('token')
+  }
+});
 
 const App: FC = () => {
   return (
@@ -18,7 +27,8 @@ const App: FC = () => {
         }}
         Components={{
           warning: StyledSnackbar,
-          info: StyledSnackbar
+          info: StyledSnackbar,
+          success: StyledSnackbar
         }}
       />
       <RouterProvider router={router} />

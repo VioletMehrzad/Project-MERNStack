@@ -7,6 +7,9 @@ const StyledSnackbar = styled(MaterialDesignContent)(() => ({
   },
   '&.notistack-MuiContent-info': {
     backgroundColor: '#041330'
+  },
+  '&.notistack-MuiContent-success': {
+    backgroundColor: '#0AC9BD'
   }
 }));
 

@@ -36,7 +36,7 @@ const RegisterHeader: FC = () => {
           <img src="./Umah-Logo-lettermark.svg" alt="" />
         </Box>
       </Box>
-      <img style={{paddingTop: '3rem'}} src="./registerHeader.png" alt="" />
+      <img style={{ paddingTop: '3rem' }} src="./registerHeader.png" alt="" />
     </Box>
   );
 };
