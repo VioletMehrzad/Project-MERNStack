@@ -55,6 +55,7 @@ const OnboardingSteps: FC = () => {
           backgroundImage: "url('./Fader.svg')",
           height: '50vh',
           width: '100vw',
+          maxWidth: 'mobile',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',

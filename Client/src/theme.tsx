@@ -22,39 +22,61 @@ declare module '@mui/material/styles' {
 
   interface Palette {
     neutral: TypeNeutral;
+    customBlue: Palette['primary'];
+    customRose: Palette['primary'];
+    customPurple: Palette['primary'];
   }
 
   interface PaletteOptions {
     neutral?: Partial<TypeNeutral>;
+    customBlue?: PaletteOptions['primary'];
+    customRose?: PaletteOptions['primary'];
+    customPurple?: PaletteOptions['primary'];
+  }
+
+  interface BreakpointOverrides {
+    mobile: true;
   }
 }
+
 declare module '@mui/material/Typography' {
   interface TypographyPropsVariantOverrides {
     subtitle3: true;
-  }
-}
-declare module '@mui/material/Box' {
-  interface BoxPropsColorOverrides {
-    aliceBlue: true;
   }
 }
 
 declare module '@mui/material/Button' {
   interface ButtonPropsVariantOverrides {
     outlinedIcon: true;
-    containedIconCircular: true;
+    containedRoundedIcon: true;
+  }
+}
+
+declare module '@mui/material/Badge' {
+  interface BadgePropsColorOverrides {
+    customRose: true;
   }
 }
 
 let theme = createTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 900,
+      lg: 1200,
+      xl: 1536,
+      mobile: 376
+    }
+  },
   palette: {
     primary: {
       main: '#FE7E00',
       contrastText: '#FFFFFF'
     },
-    background: {
-      paper: '#fff',
-      default: '#fff'
+    secondary: {
+      main: '#0AC9BD',
+      contrastText: '#FFFFFF'
     },
     neutral: {
       darkPurple: '#3A267A',
@@ -93,6 +115,26 @@ let theme = createTheme({
 });
 
 theme = createTheme(theme, {
+  palette: {
+    customBlue: theme.palette.augmentColor({
+      color: {
+        main: '#255CE7'
+      },
+      name: 'customBlue'
+    }),
+    customRose: theme.palette.augmentColor({
+      color: {
+        main: '#EC3476'
+      },
+      name: 'customRose'
+    }),
+    customPurple: theme.palette.augmentColor({
+      color: {
+        main: '#9747FF'
+      },
+      name: 'customPurple'
+    })
+  },
   components: {
     MuiButton: {
       styleOverrides: {
@@ -114,7 +156,7 @@ theme = createTheme(theme, {
           }
         },
         {
-          props: { variant: 'containedIconCircular' },
+          props: { variant: 'containedRoundedIcon' },
           style: {
             backgroundColor: theme.palette.neutral.aliceBlue,
             padding: theme.spacing(2),
@@ -149,6 +191,20 @@ theme = createTheme(theme, {
           fontSize: theme.spacing(1.5),
           fontWeight: 500,
           color: theme.palette.neutral.greyBlue
+        }
+      }
+    },
+    MuiBottomNavigationAction: {
+      styleOverrides: {
+        root: {
+          color: theme.palette.neutral.greyBlue
+        }
+      }
+    },
+    MuiPaper: {
+      styleOverrides: {
+        rounded: {
+          borderRadius: theme.spacing(1.5)
         }
       }
     }
