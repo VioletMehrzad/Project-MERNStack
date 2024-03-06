@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import './carouselBannerStyles.css';
+import './styles/carouselBannerStyles.css';
 
 const CarouselBanner: FC = () => {
   return (
