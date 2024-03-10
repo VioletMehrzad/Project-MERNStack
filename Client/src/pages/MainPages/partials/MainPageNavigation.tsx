@@ -24,7 +24,8 @@ const MainPageNavigation: FC = () => {
         boxShadow: {
           xs: 3,
           mobile: 0
-        }
+        },
+        zIndex: 10
       }}
       square>
       <BottomNavigation value={value} onChange={handleChange}>

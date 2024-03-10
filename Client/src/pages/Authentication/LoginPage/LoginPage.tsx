@@ -16,14 +16,14 @@ const LoginPage: FC = () => {
         </Divider>
         <LoginOptions />
         <Typography
+          variant="fs12"
           sx={{
-            fontSize: '0.75rem',
             fontWeight: 500,
             color: 'neutral.greyBlue',
             textAlign: 'center'
           }}>
           Don&apos;t have an accout?
-          <Link component={RouterLink} to="/register" sx={{ fontWeight: 500, pl: 0.5 }}>
+          <Link component={RouterLink} to="/register" paddingLeft={0.5}>
             Register
           </Link>
         </Typography>

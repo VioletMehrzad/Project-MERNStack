@@ -153,7 +153,8 @@ const LoginForm: FC = () => {
           component={routerLink}
           onClick={handleUnavailableFeature}
           to="#"
-          sx={{ fontSize: '0.75rem', fontWeight: 'medium' }}>
+          variant="fs12"
+          fontWeight="medium">
           Forgot password?
         </Link>
       </Box>

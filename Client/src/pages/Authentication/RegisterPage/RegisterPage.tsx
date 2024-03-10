@@ -16,14 +16,14 @@ const RegisterPage: FC = () => {
         </Divider>
         <RegisterOptions />
         <Typography
+          variant="fs12"
           sx={{
-            fontSize: '0.75rem',
             fontWeight: 500,
             color: 'neutral.greyBlue',
             textAlign: 'center'
           }}>
           Already have an accout?
-          <Link component={routerLink} to="/login" sx={{ fontWeight: 500, pl: 0.5 }}>
+          <Link component={routerLink} to="/login" paddingLeft={0.5}>
             Log In
           </Link>
         </Typography>

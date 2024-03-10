@@ -8,7 +8,7 @@ const MainPageHeader: FC = () => {
   };
 
   return (
-    <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+    <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', px: 2 }}>
       <img src="./Umah-Logo-lettermark.svg" alt="" />
       <Button variant="outlinedIcon" onClick={handleClick}>
         <Badge badgeContent={4} color="customRose">

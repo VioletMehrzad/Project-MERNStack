@@ -19,3 +19,6 @@
     background: #FE7E00;
   }
   
+  .categoriesHomePage .swiper-slide {
+    max-width: fit-content;
+  }

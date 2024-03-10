@@ -2,11 +2,17 @@ import { createTheme } from '@mui/material';
 
 declare module '@mui/material/styles' {
   interface TypographyVariants {
-    subtitle3: React.CSSProperties;
+    fs12: React.CSSProperties;
+    fs14: React.CSSProperties;
+    fs18: React.CSSProperties;
+    fs20: React.CSSProperties;
   }
 
   interface TypographyVariantsOptions {
-    subtitle3?: React.CSSProperties;
+    fs12?: React.CSSProperties;
+    fs14?: React.CSSProperties;
+    fs18?: React.CSSProperties;
+    fs20?: React.CSSProperties;
   }
 
   export interface TypeNeutral {
@@ -41,7 +47,10 @@ declare module '@mui/material/styles' {
 
 declare module '@mui/material/Typography' {
   interface TypographyPropsVariantOverrides {
-    subtitle3: true;
+    fs12: true;
+    fs14: true;
+    fs18: true;
+    fs20: true;
   }
 }
 
@@ -94,20 +103,38 @@ let theme = createTheme({
     button: {
       fontSize: '0.75rem',
       fontWeight: 700,
-      lineHeight: 1.66,
+      lineHeight: 1.25,
       textTransform: 'none'
     },
-    subtitle3: {
+    fs12: {
       fontSize: '0.75rem',
-      fontWeight: 400,
-      lineHeight: 1.25
+      lineHeight: 1.25,
+      letterSpacing: '-0.3px'
+    },
+    fs14: {
+      fontSize: '0.875rem',
+      lineHeight: 1.25,
+      letterSpacing: '-0.3px'
+    },
+    fs18: {
+      fontSize: '1.125rem',
+      lineHeight: 1.25,
+      letterSpacing: '-0.3px'
+    },
+    fs20: {
+      fontSize: '1.25rem',
+      lineHeight: 1.25,
+      letterSpacing: '-0.3px'
     }
   },
   components: {
     MuiTypography: {
       defaultProps: {
         variantMapping: {
-          subtitle3: 'div'
+          fs12: 'p',
+          fs14: 'p',
+          fs18: 'p',
+          fs20: 'p'
         }
       }
     }
@@ -116,6 +143,9 @@ let theme = createTheme({
 
 theme = createTheme(theme, {
   palette: {
+    text: {
+      primary: theme.palette.neutral.midnightBlue
+    },
     customBlue: theme.palette.augmentColor({
       color: {
         main: '#255CE7'
@@ -147,7 +177,6 @@ theme = createTheme(theme, {
           props: { variant: 'outlinedIcon' },
           style: {
             border: `1px solid ${theme.palette.neutral.tropicalBlue}`,
-            color: theme.palette.neutral.midnightBlue,
             padding: theme.spacing(2),
             minWidth: 'auto',
             '&:hover': {

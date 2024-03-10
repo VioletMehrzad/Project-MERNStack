@@ -3,9 +3,6 @@ import { type FC } from 'react';
 import { Icon } from '@iconify/react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import './styles/carouselBannerStyles.css';
 
 const CarouselBanner: FC = () => {
   return (
@@ -19,7 +16,15 @@ const CarouselBanner: FC = () => {
       }}
       modules={[Autoplay, Pagination]}>
       <SwiperSlide>
-        <Box sx={{ pt: 5.5, mb: 1.5, position: 'relative', borderRadius: 3, overflow: 'hidden' }}>
+        <Box
+          sx={{
+            pt: 5.5,
+            mb: 1.5,
+            mx: 2,
+            position: 'relative',
+            borderRadius: 3,
+            overflow: 'hidden'
+          }}>
           <Box
             component="img"
             src="./CarouselBanner01.svg"
@@ -27,12 +32,11 @@ const CarouselBanner: FC = () => {
           />
           <Box sx={{ bgcolor: '#FFCCDD', pl: 1, pt: 4, pb: 2, borderRadius: 3 }}>
             <Typography
-              fontSize="1.125rem"
+              variant="fs18"
               fontWeight="bold"
-              lineHeight="1.25em"
-              width="50%"
+              width="49%"
               paddingLeft={1}
-              paddingBottom={2}>
+              paddingBottom={2.25}>
               New collections are available!
             </Typography>
             <Button endIcon={<Icon icon="ooui:next-ltr" height="10" />}>Learn More</Button>
@@ -40,7 +44,15 @@ const CarouselBanner: FC = () => {
         </Box>
       </SwiperSlide>
       <SwiperSlide>
-        <Box sx={{ pt: 5.5, mb: 1.5, position: 'relative', borderRadius: 3, overflow: 'hidden' }}>
+        <Box
+          sx={{
+            pt: 5.5,
+            mb: 1.5,
+            mx: 2,
+            position: 'relative',
+            borderRadius: 3,
+            overflow: 'hidden'
+          }}>
           <Box
             component="img"
             src="./CarouselBanner02.svg"
@@ -48,9 +60,8 @@ const CarouselBanner: FC = () => {
           />
           <Box sx={{ bgcolor: '#D8E1DB', pl: 1, pt: 4, pb: 2, borderRadius: 3 }}>
             <Typography
-              fontSize="1.125rem"
+              variant="fs18"
               fontWeight="bold"
-              lineHeight="1.25em"
               width="50%"
               paddingLeft={1}
               paddingBottom={2}>
@@ -61,7 +72,15 @@ const CarouselBanner: FC = () => {
         </Box>
       </SwiperSlide>
       <SwiperSlide>
-        <Box sx={{ pt: 5.5, mb: 1.5, position: 'relative', borderRadius: 3, overflow: 'hidden' }}>
+        <Box
+          sx={{
+            pt: 5.5,
+            mb: 1.5,
+            mx: 2,
+            position: 'relative',
+            borderRadius: 3,
+            overflow: 'hidden'
+          }}>
           <Box
             component="img"
             src="./CarouselBanner03.svg"
@@ -69,9 +88,8 @@ const CarouselBanner: FC = () => {
           />
           <Box sx={{ bgcolor: '#FFE4CA', pl: 1, pt: 4, pb: 2, borderRadius: 3 }}>
             <Typography
-              fontSize="1.125rem"
+              variant="fs18"
               fontWeight="bold"
-              lineHeight="1.25em"
               width="50%"
               paddingLeft={1}
               paddingBottom={2}>

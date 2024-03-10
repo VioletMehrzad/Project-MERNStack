@@ -32,7 +32,7 @@ const LoginHeader: FC = () => {
           </Button>
         </Box>
         <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-          <img style={{ marginBottom: '0.25rem' }} src="./Welcome.svg" alt="" />
+          <Box component="img" src="./Welcome.svg" marginBottom={0.5} />
           <img src="./Umah-Logo-lettermark.svg" alt="" />
         </Box>
       </Box>
