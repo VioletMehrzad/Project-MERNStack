@@ -4,9 +4,9 @@ import { Icon } from '@iconify/react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode } from 'swiper/modules';
 
-const CategoriesHomePage: FC = () => {
+const CategoriesSlider: FC = () => {
   return (
-    <Box sx={{ py: 2 }}>
+    <Box paddingY={2}>
       <Box
         sx={{
           display: 'flex',
@@ -27,7 +27,7 @@ const CategoriesHomePage: FC = () => {
         slidesOffsetAfter={16}
         freeMode={true}
         modules={[FreeMode]}
-        className="categoriesHomePage">
+        className="categoriesSlider">
         <SwiperSlide>
           <Box
             sx={{
@@ -36,7 +36,7 @@ const CategoriesHomePage: FC = () => {
               alignItems: 'center',
               gap: 0.5
             }}>
-            <Button variant="containedRoundedIcon">
+            <Button variant="containedRoundedIcon" color="tertiary">
               <Icon icon="material-symbols:table-restaurant" height="1.75rem" />
             </Button>
             <Typography variant="fs12" fontWeight="medium">
@@ -52,7 +52,7 @@ const CategoriesHomePage: FC = () => {
               alignItems: 'center',
               gap: 0.5
             }}>
-            <Button variant="containedRoundedIcon">
+            <Button variant="containedRoundedIcon" color="tertiary">
               <Icon icon="solar:chair-bold" height="1.75rem" />
             </Button>
             <Typography variant="fs12" fontWeight="medium">
@@ -68,7 +68,7 @@ const CategoriesHomePage: FC = () => {
               alignItems: 'center',
               gap: 0.5
             }}>
-            <Button variant="containedRoundedIcon">
+            <Button variant="containedRoundedIcon" color="tertiary">
               <Icon icon="solar:sofa-bold" height="1.75rem" />
             </Button>
             <Typography variant="fs12" fontWeight="medium">
@@ -84,7 +84,7 @@ const CategoriesHomePage: FC = () => {
               alignItems: 'center',
               gap: 0.5
             }}>
-            <Button variant="containedRoundedIcon">
+            <Button variant="containedRoundedIcon" color="tertiary">
               <Icon icon="bxs:cabinet" height="1.75rem" />
             </Button>
             <Typography variant="fs12" fontWeight="medium">
@@ -100,7 +100,7 @@ const CategoriesHomePage: FC = () => {
               alignItems: 'center',
               gap: 0.5
             }}>
-            <Button variant="containedRoundedIcon">
+            <Button variant="containedRoundedIcon" color="tertiary">
               <Icon icon="solar:lamp-bold" height="1.75rem" />
             </Button>
             <Typography variant="fs12" fontWeight="medium">
@@ -116,7 +116,7 @@ const CategoriesHomePage: FC = () => {
               alignItems: 'center',
               gap: 0.5
             }}>
-            <Button variant="containedRoundedIcon">
+            <Button variant="containedRoundedIcon" color="tertiary">
               <Icon icon="mdi:wardrobe" height="1.75rem" />
             </Button>
             <Typography variant="fs12" fontWeight="medium">
@@ -129,4 +129,4 @@ const CategoriesHomePage: FC = () => {
   );
 };
 
-export default CategoriesHomePage;
+export default CategoriesSlider;

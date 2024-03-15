@@ -6,7 +6,7 @@ import MainPageNavigation from './partials/MainPageNavigation';
 
 const MainPage: FC = () => {
   return (
-    <Box sx={{ pt: 5.5, pb: 13 }}>
+    <Box sx={{ pt: 4, pb: 9 }}>
       <MainPageHeader />
       <Outlet />
       <MainPageNavigation />

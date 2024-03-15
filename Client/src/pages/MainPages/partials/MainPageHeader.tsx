@@ -10,7 +10,7 @@ const MainPageHeader: FC = () => {
   return (
     <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', px: 2 }}>
       <img src="./Umah-Logo-lettermark.svg" alt="" />
-      <Button variant="outlinedIcon" onClick={handleClick}>
+      <Button variant="containedIcon" color="tertiary" onClick={handleClick}>
         <Badge badgeContent={4} color="customRose">
           <Icon icon="mdi:cart" height="auto" />
         </Badge>
