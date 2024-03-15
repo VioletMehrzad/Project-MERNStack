@@ -1,8 +1,10 @@
 import { CssBaseline, Container } from '@mui/material';
 import { createBrowserRouter, Outlet } from 'react-router-dom';
-import LoginPage from './pages/LoginPage/LoginPage';
 import OnboardingPage from './pages/Onboarding/OnboardingPage';
-import RegisterPage from './pages/RegisterPage/RegisterPage';
+import LoginPage from './pages/Authentication/LoginPage/LoginPage';
+import RegisterPage from './pages/Authentication/RegisterPage/RegisterPage';
+import MainPage from './pages/MainPages/MainPage';
+import HomePage from './pages/MainPages/partials/HomePage/HomePage';
 
 const router = createBrowserRouter([
   {
@@ -10,7 +12,7 @@ const router = createBrowserRouter([
     element: (
       <>
         <CssBaseline />
-        <Container maxWidth="xs" disableGutters>
+        <Container maxWidth="mobile" disableGutters>
           <Outlet />
         </Container>
       </>
@@ -27,6 +29,28 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <RegisterPage />
+      },
+      {
+        path: '/main',
+        element: <MainPage />,
+        children: [
+          {
+            path: '/main',
+            element: <HomePage />
+          },
+          {
+            path: '/main/categories',
+            element: <HomePage />
+          },
+          {
+            path: '/main/wishlist',
+            element: <HomePage />
+          },
+          {
+            path: '/main/account',
+            element: <HomePage />
+          }
+        ]
       }
     ]
   }

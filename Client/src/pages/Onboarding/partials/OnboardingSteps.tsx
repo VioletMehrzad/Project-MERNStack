@@ -55,6 +55,7 @@ const OnboardingSteps: FC = () => {
           backgroundImage: "url('./Fader.svg')",
           height: '50vh',
           width: '100vw',
+          maxWidth: 'mobile',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
@@ -62,16 +63,10 @@ const OnboardingSteps: FC = () => {
         }}>
         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', px: 2, pb: 4 }}>
           <Box textAlign="center" marginBottom={2}>
-            <Typography
-              variant="h6"
-              sx={{ fontWeight: 'bold', letterSpacing: '-0.3px', color: 'white' }}>
+            <Typography variant="fs20" sx={{ fontWeight: 'bold', color: 'white', pb: 0.75 }}>
               {steps[activeStep].title}
             </Typography>
-            <Typography
-              variant="subtitle3"
-              letterSpacing={'-0.3px'}
-              color="rgba(255, 255, 255, 0.6)"
-              paddingX={6}>
+            <Typography variant="fs12" color="rgba(255, 255, 255, 0.6)" paddingX={6}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
             </Typography>
           </Box>

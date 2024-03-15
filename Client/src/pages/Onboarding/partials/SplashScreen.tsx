@@ -28,7 +28,7 @@ const SplashScreen: FC = () => {
           zIndex: 1
         }}
       />
-      <img width="100%" src="./Image-onboarding.png" alt="" />
+      <img width="100%" src="./splashscreen.png" alt="" />
     </Box>
   );
 };

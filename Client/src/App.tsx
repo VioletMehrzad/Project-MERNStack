@@ -6,6 +6,10 @@ import router from './router';
 import theme from './theme';
 import StyledSnackbar from './components/StyledSnackbar';
 import ContextProvider from './helpers/states/ContextProvider';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/free-mode';
+import './styles.css';
 
 const App: FC = () => {
   return (
