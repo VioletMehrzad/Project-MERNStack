@@ -1,11 +1,13 @@
 import { Box } from '@mui/material';
 import { type FC } from 'react';
 import SearchBar from '../../../../components/SearchBar';
+import RoomsSlider from './partials/RoomsSlider';
 
 const DiscoverPage: FC = () => {
   return (
-    <Box sx={{ p: 2 }}>
+    <Box sx={{ pt: 3 }}>
       <SearchBar />
+      <RoomsSlider />
     </Box>
   );
 };

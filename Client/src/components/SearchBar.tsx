@@ -5,7 +5,8 @@ import SearchIcon from '@mui/icons-material/Search';
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
-  border: `1px solid ${theme.palette.neutral.tropicalBlue}`
+  border: `1px solid ${theme.palette.neutral.tropicalBlue}`,
+  margin: theme.spacing(0, 2)
 }));
 
 const SearchIconWrapper = styled('div')(({ theme }) => ({

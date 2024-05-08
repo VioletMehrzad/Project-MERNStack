@@ -1,10 +1,10 @@
 import { BottomNavigation, BottomNavigationAction, Paper } from '@mui/material';
-import { useState, type FC } from 'react';
+import { type SetStateAction, useState, type FC } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import { Icon } from '@iconify/react';
 
 const MainPageNavigation: FC = () => {
-  const [value, setValue] = useState('home');
+  const [value, setValue] = useState<SetStateAction<string>>();
 
   const handleChange = (_event: React.SyntheticEvent, newValue: string): void => {
     setValue(newValue);
@@ -33,7 +33,7 @@ const MainPageNavigation: FC = () => {
           value="home"
           icon={<Icon icon="mingcute:home-5-fill" height="auto" />}
           component={RouterLink}
-          to="/main"
+          to="/main/home"
         />
         <BottomNavigationAction
           value="discover"

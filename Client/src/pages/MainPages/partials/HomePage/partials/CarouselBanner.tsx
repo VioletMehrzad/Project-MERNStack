@@ -3,6 +3,9 @@ import { type FC } from 'react';
 import { Icon } from '@iconify/react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
+import carouselBanner01 from '../../../../../../public/CarouselBanner01.svg';
+import carouselBanner02 from '../../../../../../public/CarouselBanner02.svg';
+import carouselBanner03 from '../../../../../../public/CarouselBanner03.svg';
 
 const CarouselBanner: FC = () => {
   return (
@@ -27,7 +30,7 @@ const CarouselBanner: FC = () => {
           }}>
           <Box
             component="img"
-            src="./CarouselBanner01.svg"
+            src={carouselBanner01}
             sx={{ position: 'absolute', right: 0, bottom: 0, width: '10.5rem' }}
           />
           <Box sx={{ bgcolor: '#FFCCDD', pl: 1, pt: 4, pb: 2, borderRadius: 1 }}>
@@ -55,7 +58,7 @@ const CarouselBanner: FC = () => {
           }}>
           <Box
             component="img"
-            src="./CarouselBanner02.svg"
+            src={carouselBanner02}
             sx={{ position: 'absolute', right: '1.5rem', bottom: 0, width: '6.125rem' }}
           />
           <Box sx={{ bgcolor: '#D8E1DB', pl: 1, pt: 4, pb: 2, borderRadius: 1 }}>
@@ -83,7 +86,7 @@ const CarouselBanner: FC = () => {
           }}>
           <Box
             component="img"
-            src="./CarouselBanner03.svg"
+            src={carouselBanner03}
             sx={{ position: 'absolute', right: 0, bottom: 0, width: '12rem' }}
           />
           <Box sx={{ bgcolor: '#FFE4CA', pl: 1, pt: 4, pb: 2, borderRadius: 1 }}>

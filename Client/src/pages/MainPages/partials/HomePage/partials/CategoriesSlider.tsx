@@ -27,7 +27,7 @@ const CategoriesSlider: FC = () => {
         slidesOffsetAfter={16}
         freeMode={true}
         modules={[FreeMode]}
-        className="categoriesSlider">
+        className="freeModeSlider">
         <SwiperSlide>
           <Box
             sx={{

@@ -1,6 +1,7 @@
 import { Badge, Box, Button } from '@mui/material';
 import { type FC } from 'react';
 import { Icon } from '@iconify/react';
+import umahLogoLettermark from '../../../../public/Umah-Logo-lettermark.svg'
 
 const MainPageHeader: FC = () => {
   const handleClick = (): void => {
@@ -9,7 +10,7 @@ const MainPageHeader: FC = () => {
 
   return (
     <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', px: 2 }}>
-      <img src="./Umah-Logo-lettermark.svg" alt="" />
+      <img src={umahLogoLettermark} alt="" />
       <Button variant="containedIcon" color="tertiary" onClick={handleClick}>
         <Badge badgeContent={4} color="customRose">
           <Icon icon="mdi:cart" height="auto" />
