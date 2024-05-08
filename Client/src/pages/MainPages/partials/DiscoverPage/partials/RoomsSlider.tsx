@@ -9,9 +9,6 @@ const RoomsSlider: FC = () => {
     <Box sx={{ pt: 3, pb: 2 }}>
       <Typography
         sx={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
           pb: 2,
           px: 2
         }}
