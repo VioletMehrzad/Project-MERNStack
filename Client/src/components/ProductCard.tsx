@@ -9,12 +9,13 @@ import {
 } from '@mui/material';
 import { type FC } from 'react';
 import { Icon } from '@iconify/react';
+import productImageChair from '../../public/productImage_chair.svg';
 
 const ProductCard: FC = () => {
   return (
     <Card variant="outlined" sx={{ maxWidth: '10.5rem', position: 'relative' }}>
       <CardActionArea>
-        <CardMedia component="img" image="./productImage_chair.svg" />
+        <CardMedia component="img" image={productImageChair} />
         <CardContent sx={{ bgcolor: 'neutral.aliceBlue', p: 1.5 }}>
           <Typography gutterBottom variant="fs14" fontWeight="bold">
             Brown Chair

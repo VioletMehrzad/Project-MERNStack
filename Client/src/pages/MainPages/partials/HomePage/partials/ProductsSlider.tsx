@@ -28,7 +28,7 @@ const ProductsSlider: FC = () => {
         slidesOffsetAfter={16}
         freeMode={true}
         modules={[FreeMode]}
-        className="productsSlider">
+        className="freeModeSlider">
         <SwiperSlide>
           <ProductCard />
         </SwiperSlide>

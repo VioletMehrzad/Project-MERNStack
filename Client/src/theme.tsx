@@ -111,6 +111,9 @@ let theme = createTheme({
       softPurple: '#F2EEFF'
     }
   },
+  shape: {
+    borderRadius: 12
+  },
   typography: {
     fontFamily: "'Plus Jakarta Sans' ,'Roboto', 'Helvetica', 'Arial', sans-serif",
     button: {
@@ -180,11 +183,6 @@ theme = createTheme(theme, {
   },
   components: {
     MuiButton: {
-      styleOverrides: {
-        root: {
-          borderRadius: theme.spacing(1.5)
-        }
-      },
       variants: [
         {
           props: { variant: 'containedIcon' },
@@ -272,7 +270,6 @@ theme = createTheme(theme, {
     MuiOutlinedInput: {
       styleOverrides: {
         root: {
-          borderRadius: theme.spacing(1.5),
           color: theme.palette.neutral.midnightBlue
         },
         notchedOutline: {
@@ -306,9 +303,6 @@ theme = createTheme(theme, {
     },
     MuiPaper: {
       styleOverrides: {
-        rounded: {
-          borderRadius: theme.spacing(1.5)
-        },
         outlined: {
           borderColor: theme.palette.neutral.tropicalBlue
         }

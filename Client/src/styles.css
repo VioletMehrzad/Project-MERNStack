@@ -19,6 +19,6 @@
     background: #FE7E00;
   }
   
-  .categoriesSlider .swiper-slide, .productsSlider .swiper-slide {
+  .freeModeSlider .swiper-slide {
     max-width: fit-content;
   }
