@@ -36,10 +36,10 @@ const MainPageNavigation: FC = () => {
           to="/main"
         />
         <BottomNavigationAction
-          value="categories"
+          value="discover"
           icon={<Icon icon="mage:archive-drawer-fill" height="auto" />}
           component={RouterLink}
-          to="/main/categories"
+          to="/main/discover"
         />
         <BottomNavigationAction
           value="wishlist"

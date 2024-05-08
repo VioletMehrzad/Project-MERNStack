@@ -22,7 +22,7 @@ const CarouselBanner: FC = () => {
             mb: 1.5,
             mx: 2,
             position: 'relative',
-            borderRadius: 3,
+            borderRadius: 1,
             overflow: 'hidden'
           }}>
           <Box
@@ -30,7 +30,7 @@ const CarouselBanner: FC = () => {
             src="./CarouselBanner01.svg"
             sx={{ position: 'absolute', right: 0, bottom: 0, width: '10.5rem' }}
           />
-          <Box sx={{ bgcolor: '#FFCCDD', pl: 1, pt: 4, pb: 2, borderRadius: 3 }}>
+          <Box sx={{ bgcolor: '#FFCCDD', pl: 1, pt: 4, pb: 2, borderRadius: 1 }}>
             <Typography
               variant="fs18"
               fontWeight="bold"
@@ -50,7 +50,7 @@ const CarouselBanner: FC = () => {
             mb: 1.5,
             mx: 2,
             position: 'relative',
-            borderRadius: 3,
+            borderRadius: 1,
             overflow: 'hidden'
           }}>
           <Box
@@ -58,7 +58,7 @@ const CarouselBanner: FC = () => {
             src="./CarouselBanner02.svg"
             sx={{ position: 'absolute', right: '1.5rem', bottom: 0, width: '6.125rem' }}
           />
-          <Box sx={{ bgcolor: '#D8E1DB', pl: 1, pt: 4, pb: 2, borderRadius: 3 }}>
+          <Box sx={{ bgcolor: '#D8E1DB', pl: 1, pt: 4, pb: 2, borderRadius: 1 }}>
             <Typography
               variant="fs18"
               fontWeight="bold"
@@ -78,7 +78,7 @@ const CarouselBanner: FC = () => {
             mb: 1.5,
             mx: 2,
             position: 'relative',
-            borderRadius: 3,
+            borderRadius: 1,
             overflow: 'hidden'
           }}>
           <Box
@@ -86,7 +86,7 @@ const CarouselBanner: FC = () => {
             src="./CarouselBanner03.svg"
             sx={{ position: 'absolute', right: 0, bottom: 0, width: '12rem' }}
           />
-          <Box sx={{ bgcolor: '#FFE4CA', pl: 1, pt: 4, pb: 2, borderRadius: 3 }}>
+          <Box sx={{ bgcolor: '#FFE4CA', pl: 1, pt: 4, pb: 2, borderRadius: 1 }}>
             <Typography
               variant="fs18"
               fontWeight="bold"

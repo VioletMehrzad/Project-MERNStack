@@ -5,6 +5,7 @@ import LoginPage from './pages/Authentication/LoginPage/LoginPage';
 import RegisterPage from './pages/Authentication/RegisterPage/RegisterPage';
 import MainPage from './pages/MainPages/MainPage';
 import HomePage from './pages/MainPages/partials/HomePage/HomePage';
+import DiscoverPage from './pages/MainPages/partials/DiscoverPage/DiscoverPage';
 
 const router = createBrowserRouter([
   {
@@ -39,8 +40,8 @@ const router = createBrowserRouter([
             element: <HomePage />
           },
           {
-            path: '/main/categories',
-            element: <HomePage />
+            path: '/main/discover',
+            element: <DiscoverPage />
           },
           {
             path: '/main/wishlist',
